@@ -1,0 +1,22 @@
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px 150px;
+  }
+header {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(64 64 64);
+  }
+  
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+}
+

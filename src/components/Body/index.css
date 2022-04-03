@@ -1,0 +1,18 @@
+.main {
+    padding: 20px 150px;
+  }
+.posts {
+  display: inline-flex;
+  flex-direction: column;
+
+}
+
+.posts_container { 
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.all_posts {
+  display: flex;
+  justify-content: center;
+}
