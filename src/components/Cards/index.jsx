@@ -1,40 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, Col, Row } from 'antd';
 import Post from "../Post";
-
+import { Link } from "react-router-dom";
 
 const Cards = ({
-    posts, 
-    user,
-    updateLikesOnPost,
-    deletePostById
+  posts, 
+  updateLikesOnPost,
+  deletePostById
 }) => {
-    return (
+  return (
+      <div className="site-card-wrapper">
         <Row gutter={[16, 16]}>
-            {posts.map(post => (
-              <Col span={8} key={post._id}>  
-                  <Card 
-                      title={post.title} 
-                      bordered={false}
-                  >  
+          {posts.map(post => (
+            <Col span={8} key={post._id}>  
+              <Link to={`/post/${post._id}`}>
+                <Card 
+                    title={post.title} 
+                    bordered={false}
+                    >  
                     <Post 
-                        postId={post._id}
-                        avatar={post.author.avatar}
-                        email={post.author.email}
-                        text={post.text}
-                        tags={post.tags}
-                        created_at={post.created_at} 
-                        updated_at={post.updated_at}
-                        user={user}
-                        likes={post.likes}
+                        post={post}
                         updateLikesOnPost={updateLikesOnPost}
                         deletePostById={deletePostById}
                     />
-                  </Card>
-              </Col> 
-            ))}
-        </Row>
-    );
-  };
+                </Card>
+              </Link>
+            </Col> 
+          ))}
+      </Row>
+    </div>
+  );
+};
 
 export default Cards;

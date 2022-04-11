@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppAnt from "./AppAnt";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 import "antd/dist/antd.css";
 
-ReactDOM.render(<AppAnt />, document.querySelector("#root"));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.querySelector("#root")
+);
